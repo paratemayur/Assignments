@@ -11,6 +11,6 @@ public class TestNumPalindromeOrNot
 {
 	@Test
 	public void Test() {
-		 assertEquals(true, ArmstrongOrNot.checkArmOrNot(153));
+		 assertEquals(true, NumPalindromeOrNot.checkPalindrome(1221));
 	}
 }
