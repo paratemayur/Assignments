@@ -2,7 +2,7 @@ package com.yash.tdd.Assignments.Q7;
 
 public class NumPalindromeOrNot {
 
-	public static boolean name(int num) {
+	public static boolean checkPalindrome(int num) {
 
 		int reversedNum = 0, remainder;
 		int originalNum = num;
@@ -21,6 +21,6 @@ public class NumPalindromeOrNot {
 	}
 	
 	public static void main(String[] args) {
-		NumPalindromeOrNot.name(3553);
+		NumPalindromeOrNot.checkPalindrome(3553);
 	}
 }
