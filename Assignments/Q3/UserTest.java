@@ -10,7 +10,7 @@ class UserTest {
 
 	@Test
 	void test() throws ClassNotFoundException, SQLException {
-		assertTrue(User.checkDataMatchOrNot("", ""));
+		assertTrue(User.checkDataMatchOrNot("mayur.parate@yash.com", "mayurparate"));
 	}
 
 }
