@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	<context:component-scan
+		base-package="com.baeldung.applicationcontext" />
+
+	<!-- _____________________Assignment 01_________________________ -->
+	
+	<bean class="springcore.assignment01.Role" id="roleID"
+		factory-method="getRole" />
+
+	<!-- _____________________Assignment 02_________________________ -->
+	
+	<bean class="springcore.assignment02.AverageNum" id="avgID">
+		<property name="num">
+			<list>
+				<value>90</value>
+				<value>95</value>
+				<value>85</value>
+				<value>90</value>
+				<value>60</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- _____________________Assignment 03_________________________ -->
+	
+	<bean class="springcore.assignment03.Emi" id="emiID">
+		<property name="rate" value="10" />
+	</bean>
+
+	<!-- _____________________Assignment 04_________________________ -->
+	
+	<bean class="springcore.assignment04.Department" id="dID">
+		<property name="did" value="101" />
+		<property name="dname" value="CSE" />
+	</bean>
+
+	<bean class="springcore.assignment04.Employee" id="eid"
+		autowire="byType">
+		<property name="eid" value="201" />
+		<property name="ename" value="Mayur Parate" />
+		<property name="salary" value="60000.00f" />
+		<property name="department" ref="dID" />
+	</bean>
+
+	<bean class="springcore.assignment04.Department" id="dID1">
+		<property name="did" value="102" />
+		<property name="dname" value="IT" />
+	</bean>
+
+	<bean class="springcore.assignment04.Employee" id="eid1"
+		autowire="byType">
+		<property name="eid" value="202" />
+		<property name="ename" value="Akshay Jawale" />
+		<property name="salary" value="50000.00f" />
+		<property name="department" ref="dID1" />
+	</bean>
+
+	<!-- _____________________Assignment 05_________________________ -->
+	
+	<bean class="springcore.assignment05.FindMax" id="maxID">
+		<property name="max">
+			<list>
+				<value>90</value>
+				<value>95</value>
+				<value>85</value>
+				<value>100</value>
+				<value>60</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- _____________________Assignment 06_________________________ -->
+	
+	<bean class="springcore.assignment06.Vowel" id="VowelID">
+		<property name="str">
+			<array>
+				<value>Mayur</value>
+				<value>Akshay</value>
+				<value>ryn</value>
+				<value>Subrat</value>
+				<value>sky</value>
+			</array>
+		</property>
+	</bean>
+
+	<!-- _____________________Assignment 07_________________________ -->
+	
+	<bean class="springcore.assignment07.Array1" id="arr1ID">
+		<constructor-arg>
+			<array>
+				<value>10</value>
+				<value>30</value>
+				<value>50</value>
+				<value>60</value>
+				<value>90</value>
+			</array>
+		</constructor-arg>
+		<constructor-arg ref="arr2ID" />
+	</bean>
+
+	<bean class="springcore.assignment07.Array2" id="arr2ID">
+		<constructor-arg>
+			<array>
+				<value>20</value>
+				<value>40</value>
+				<value>70</value>
+				<value>80</value>
+				<value>100</value>
+			</array>
+		</constructor-arg>
+	</bean>
+
+	<!-- _____________________Assignment 08_________________________ -->
+	
+	<bean class="springcore.assignment08.Item" id="itemID">
+		<property name="item">
+			<list>
+				<value>60</value>
+				<value>45</value>
+				<value>55</value>
+				<value>50</value>
+				<value>60</value>
+				<value>40</value>
+				<value>55</value>
+				<value>30</value>
+				<value>40</value>
+				<value>35</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- _____________________Assignment 09_________________________ -->
+	
+	<bean class="springcore.assignment09.DistanceCal" id="dis1ID">
+		<property name="fromcity" value="Pune" />
+		<property name="tocity" value="Mumbai" />
+		<property name="distance" value="150" />
+	</bean>
+
+	<bean class="springcore.assignment09.DistanceCal" id="dis2ID">
+		<property name="fromcity" value="Pune" />
+		<property name="tocity" value="Nagpur" />
+		<property name="distance" value="850" />
+	</bean>
+
+	<bean class="springcore.assignment09.DistanceCal" id="dis3ID">
+		<property name="fromcity" value="Pune" />
+		<property name="tocity" value="Indore" />
+		<property name="distance" value="595" />
+	</bean>
+
+	<bean class="springcore.assignment09.DistanceCal" id="dis4ID">
+		<property name="fromcity" value="Pune" />
+		<property name="tocity" value="Banglore" />
+		<property name="distance" value="840" />
+	</bean>
+
+	<bean class="springcore.assignment09.DistanceCal" id="dis5ID">
+		<property name="fromcity" value="Pune" />
+		<property name="tocity" value="Goa" />
+		<property name="distance" value="440" />
+	</bean>
+
+	<!-- _____________________Assignment 10_________________________ -->
+	
+	<bean class="springcore.assignment10.Student" id="stdID">
+		<property name="std">
+			<map>
+				<entry key="Mayur" value="80" />
+				<entry key="Nikhil" value="90" />
+				<entry key="Akshay" value="95" />
+				<entry key="Subrat" value="85" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- _____________________Assignment 11_________________________ -->
+
+	<bean class="springcore.assignment11.Result" id="res1ID">
+		<constructor-arg value="81.00f" />
+		<constructor-arg value="90.00f" />
+		<constructor-arg value="85.0f" />
+		<constructor-arg value="80.00f" />
+	</bean>
+	
+	<bean class="springcore.assignment11.Student" id="std1ID">
+		<constructor-arg value="1001" />
+		<constructor-arg value="Subrat Devnath" />
+		<constructor-arg value="2000-03-10" />
+		<constructor-arg value="12th" />
+		<constructor-arg value="Volvo" />
+		<constructor-arg ref="res1ID" />
+	</bean>
+
+	<bean class="springcore.assignment11.Result" id="res2ID">
+		<constructor-arg value="90.00f" />
+		<constructor-arg value="95f" />
+		<constructor-arg value="85f" />
+		<constructor-arg value="85f" />
+	</bean>
+
+	<bean class="springcore.assignment11.Student" id="std2ID">
+		<constructor-arg value="1002" />
+		<constructor-arg value="Mayur Parate" />
+		<constructor-arg value="2000-21-02" />
+		<constructor-arg value="12th" />
+		<constructor-arg value="Google" />
+		<constructor-arg ref="res2ID" />
+	</bean>
+
+	<bean class="springcore.assignment11.Result" id="res3ID">
+		<constructor-arg value="89.00f" />
+		<constructor-arg value="91.00f" />
+		<constructor-arg value="80.0f" />
+		<constructor-arg value="87.00f" />
+	</bean>
+	
+	<bean class="springcore.assignment11.Student" id="std3ID">
+		<constructor-arg value="1003" />
+		<constructor-arg value="Akshay Sahare" />
+		<constructor-arg value="1996-06-11" />
+		<constructor-arg value="12th" />
+		<constructor-arg value="Audi" />
+		<constructor-arg ref="res3ID" />
+	</bean>
+
+	<bean class="springcore.assignment11.Result" id="res4ID">
+		<constructor-arg value="90.00f" />
+		<constructor-arg value="95f" />
+		<constructor-arg value="88f" />
+		<constructor-arg value="78f" />
+	</bean>
+
+	<bean class="springcore.assignment11.Student" id="std4ID">
+		<constructor-arg value="1004" />
+		<constructor-arg value="Pranjal Badge" />
+		<constructor-arg value="1999-18-08" />
+		<constructor-arg value="12th" />
+		<constructor-arg value="Volvo" />
+		<constructor-arg ref="res4ID" />
+	</bean>
+
+	<bean class="springcore.assignment11.Result" id="res5ID">
+		<constructor-arg value="90.00f" />
+		<constructor-arg value="95f" />
+		<constructor-arg value="88f" />
+		<constructor-arg value="78f" />
+	</bean>
+
+	<bean class="springcore.assignment11.Student" id="std5ID">
+		<constructor-arg value="1005" />
+		<constructor-arg value="Ashish Dhule" />
+		<constructor-arg value="1997-20-05" />
+		<constructor-arg value="12th" />
+		<constructor-arg value="Google" />
+		<constructor-arg ref="res5ID" />
+	</bean>
+
+	<!-- _____________________Assignment 12_________________________ -->
+	
+	<bean class="springcore.assignment12.Employee" id="emp1ID">
+		<constructor-arg value="101" />
+		<constructor-arg value="Mayur Parate" />
+		<constructor-arg value="Java Developer" />
+		<constructor-arg value="30000f" />
+	</bean>
+	
+	<bean class="springcore.assignment12.Employee" id="emp2ID">
+		<constructor-arg value="102" />
+		<constructor-arg value="Ashish Dhule" />
+		<constructor-arg value="Java Developer" />
+		<constructor-arg value="35000f" />
+	</bean>
+
+	<!-- _____________________Assignment 13_________________________ -->
+	
+	<bean class="springcore.assignment13.MovieSystem" id="msID">
+		<property name="moviename" value="Kick" />
+		<property name="showtime" value="6-9" />
+		<property name="priceofticket" value="80f" />
+		<property name="moviecollection" value="378 crore" />
+	</bean>
+
+	<!-- _____________________Assignment 14_________________________ -->
+	
+	<bean class="springcore.assignment14.Rectangle" id="recID">
+		<constructor-arg value="5" />
+		<constructor-arg value="8" />
+	</bean>
+
+	<bean class="springcore.assignment14.Circle" id="cirID">
+		<constructor-arg value="6" />
+	</bean>
+
+	<bean class="springcore.assignment14.Square" id="sqrID">
+		<constructor-arg value="5" />
+	</bean>
+
+	<!-- _____________________Assignment 15_________________________ -->
+
+	<bean class="springcore.assignment15.Category" id="catID">
+		<property name="catid" value="101" />
+		<property name="catname" value="Britannia" />
+	</bean>
+
+	<bean class="springcore.assignment15.Item" id="ItemID">
+		<property name="id" value="201" />
+		<property name="iname" value="Dark Fantasy" />
+		<property name="noi" value="5" />
+		<property name="iprice" value="90" />
+		<property name="category" ref="catID" />
+	</bean>
+	
+	<bean class="springcore.assignment15.Customer" id="custID">
+		<property name="custid" value="501" />
+		<property name="custname" value="Subrat Devnath" />
+		<property name="item" ref="ItemID" />
+	</bean>
+	
+</beans>
